@@ -1,0 +1,10 @@
+= image_tag @user.avatar.url(:thumb)
+= @user.name
+
+h1 = "User's items"
+
+section id="items"
+  .items-page
+    = render partial: 'shared/item', collection: @items, as: :item
+
+= paginate @items

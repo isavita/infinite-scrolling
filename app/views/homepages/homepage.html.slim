@@ -1,0 +1,8 @@
+h1.top-users-header
+  = "Users with the most items (#{link_to 'Join The Club', new_user_path})".html_safe
+
+section id="top-users"
+  .top-users-page
+    = render partial: 'shared/top_user', collection: @users, as: :user
+
+= paginate @users

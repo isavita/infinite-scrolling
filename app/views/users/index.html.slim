@@ -1,0 +1,31 @@
+h1 
+  = "Users (#{link_to 'Homepage', homepage_homepage_path, data: { no_turbolink: true }})".html_safe
+
+= paginate @users
+
+table.table.table-hover
+  thead
+    tr
+      th Avatar
+      th Name
+      th Age
+      th Latitude
+      th Longitude
+      th
+      th
+      th
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = image_tag user.avatar.url(:thumb)
+        td = user.name
+        td = user.age
+        td = number_to_human(user.latitude)
+        td = number_to_human(user.longitude)
+        td = link_to 'Show', user
+        td = link_to 'Edit', edit_user_path(user)
+        td = link_to 'Destroy', user, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+= link_to 'New User', new_user_path
