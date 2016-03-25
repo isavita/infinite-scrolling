@@ -99,6 +99,8 @@ GEM
     pg (0.18.4)
     progressbar (0.21.0)
     rack (1.6.4)
+    rack-mini-profiler (0.9.9.2)
+      rack (>= 1.2.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.6)
@@ -205,6 +207,7 @@ DEPENDENCIES
   paperclip
   pg (~> 0.15)
   progressbar
+  rack-mini-profiler
   rails (= 4.2.6)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
