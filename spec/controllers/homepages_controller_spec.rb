@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 describe HomepagesController, type: :controller do
-  context 'validations' do
-    it 'presence' do
-      validate_presence_of(:name)
-    end
+  specify '#homepage' do
+    get :homepage
+    assert_template 'homepages/homepage'
   end
 end
