@@ -1,10 +1,10 @@
-= image_tag @user.avatar.url(:thumb)
-= @user.name
+= image_tag @user_hash.avatar_thumb
+= @user_hash.name
 
 h1 = "User's items"
 
 section id="items"
   .items-page
-    = render partial: 'shared/item', collection: @items, as: :item
+    = render partial: 'shared/item', collection: @items_hash, as: :item
 
-= paginate @items
+= paginate @items_hash

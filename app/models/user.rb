@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Searchable::User
+
   validates :name, presence: true
   
   has_many :items, dependent: :destroy

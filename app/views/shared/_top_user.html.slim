@@ -1,5 +1,5 @@
 .top-user
-  = link_to user_items_path(user), class: 'profile', data: { no_turbolink: true } do
-    p = image_tag user.avatar.url(:thumb)
+  = link_to user_items_path(user.id), class: 'profile', data: { no_turbolink: true } do
+    p = image_tag user.avatar_thumb
     p = user.name
     p = "(#{number_to_human(user.latitude)}, #{number_to_human(user.longitude)})"

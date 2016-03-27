@@ -2,6 +2,12 @@ class HomepagesController < ApplicationController
   include User::Pagination
 
   def homepage
-    @users = User.order(:created_at).page(page).per(per_page)
+    filters = {
+      page: page,
+      per: per_page,
+      sort: { age: :desc },
+      load: false # Avoid hitting database
+    }
+    @users_hash = User.search(filters)
   end
 end

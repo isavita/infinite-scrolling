@@ -52,8 +52,16 @@ class UsersController < ApplicationController
   end
 
   def items
-    @user = User.find(params[:user_id])
-    @items = Item.where(user: @user).page(page).per(per_page)
+    @user_hash = User.search(where: { id: params[:user_id] }, limit: 1, load: false).first
+    query = '*'
+    filters = {
+      where: { user_id: @user_hash.id },
+      page: page,
+      per: per_page,
+      sort: { age: :desc },
+      load: false # Avoid hitting database
+    }
+    @items_hash = Item.search(query, filters)
   end
 
   private

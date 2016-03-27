@@ -8,6 +8,7 @@ gem 'kaminari'
 gem 'progressbar'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'rack-mini-profiler'
+gem 'searchkick', '>= 1.0.15'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'

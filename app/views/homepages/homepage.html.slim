@@ -3,6 +3,6 @@ h1.top-users-header
 
 section id="top-users"
   .top-users-page
-    = render partial: 'shared/top_user', collection: @users, as: :user
+    = render partial: 'shared/top_user', collection: @users_hash, as: :user
 
-= paginate @users
+= paginate @users_hash
